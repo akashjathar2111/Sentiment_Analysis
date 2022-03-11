@@ -1,0 +1,4 @@
+pandas 
+stramlit
+bs4
+requests
