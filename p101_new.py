@@ -7,7 +7,7 @@ import requests
 
 st.title('Summary Extraction along with Sentiment Analysis')
 
-Category=  pd.read_csv(r"C:\Users\Shri Ganesha\Documents\Excelr_data\project-101\Category.csv")
+Category=  pd.read_csv("Category.csv")
 # select Category of Book like Sport,Art,Science etc.
 choice = st.sidebar.selectbox('Select Category',Category['Category'])
 #url1 = 'https://www.goodreads.com/shelf/show/'+str(choice)
