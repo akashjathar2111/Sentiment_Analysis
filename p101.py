@@ -5,19 +5,14 @@ import seaborn as sns
 import streamlit as st
 from bs4 import BeautifulSoup as bs
 import requests
-import re
-from nltk.corpus import stopwords
-from nltk.tokenize import word_tokenize
 from nrclex import NRCLex
-my_stop_words = stopwords.words('english')
-afinn = pd.read_csv(r"C:\Users\Shri Ganesha\Documents\Excelr_data\Afinn.csv",encoding = 'latin1')
-afinn1= afinn.set_index('word')['value'].to_dict()
+
 
 
 
 st.title('Summary Extraction along with Sentiment Analysis')
 
-Category=  pd.read_csv(r"C:\Users\Shri Ganesha\Documents\Excelr_data\project-101\Category.csv")
+Category=  pd.read_csv("Category.csv")
 
 choice = st.sidebar.selectbox('Select Category',Category['Category'])
 
@@ -56,32 +51,7 @@ for i,j in enumerate(x):
             summary_text = summary.text
             
             
-            # if choice == 'Sentiment':
-            #     Text = re.sub('[^a-zA-z]',' ',summary_text)
-            #     Text = Text.lower()
-            #     x =word_tokenize(Text)
-            #     no_stop_tokens = [word for word in x if not word in my_stop_words]
-            #     df = pd.DataFrame(no_stop_tokens,columns = ['words'])
-            #     sen_val = []
-            #     for word in df['words']:
-            #         sen_val.append(afinn1.get(word,0))
-            #     df['sen_val'] = sen_val
-            #     def sentiment(sent_value):
-            #         result = ''
-            #         if sent_value < 0:
-            #             result = 'Negative'
-            #         if sent_value == 0:
-            #             result = 'Neutral'
-            #         if sent_value > 0 :
-            #             result = 'Positive'
-            #         return result
-            #     df['sentiment'] = df.sen_val.apply(sentiment)  
-            #     def countplot():
-            #         fig = plt.figure(figsize=(10,4))
-            #         sns.countplot(df.sentiment) 
-            #         st.pyplot(fig) 
-            #     countplot()    
-            #     del df
+        
             
             emotion_ = NRCLex(summary_text)
             Emotion =[]
