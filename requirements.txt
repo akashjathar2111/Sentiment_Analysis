@@ -4,5 +4,5 @@ streamlit
 bs4
 requests >= 2.26.0
 NRCLex
-seaborn =>0.11.2
+seaborn =>0.11.1
 matplotlib 
