@@ -1,8 +1,4 @@
 
-
-# -*- coding: utf-8 -*-
-#from tracemalloc import stop
-#!pip install NRCLex
 import spacy
 nlp = spacy.load("en_core_web_sm")
 
@@ -60,7 +56,7 @@ with open("positive-words.txt","r") as pos:
 # with open("afinn2.txt","r") as affin:
 #     affinity = affin.read().split("\n")
 
-affinity_data = pd.read_csv(r"C:\Users\Shri Ganesha\Downloads\Afinn.csv",encoding='latin1')
+affinity_data = pd.read_csv(r"Afinn.csv",encoding='latin1')
 affinity_scores = affinity_data.set_index('word')['value'].to_dict()
 sentiment_lexicon = affinity_scores
 
@@ -300,7 +296,7 @@ def find_sentiment(summary_dataframe):
 
 
 
-Category=  pd.read_csv(r"C:\Users\Shri Ganesha\Documents\Excelr_data\project-101\Category.csv")
+Category=  pd.read_csv(r"Category.csv")
 # select Category of Book like Sport,Art,Science etc.
 choice = st.sidebar.selectbox('Select Category',Category['Category'])
 #url1 = 'https://www.goodreads.com/shelf/show/'+str(choice)
