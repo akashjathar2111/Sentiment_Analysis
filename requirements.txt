@@ -6,3 +6,7 @@ requests >= 2.26.0
 NRCLex
 seaborn 
 matplotlib 
+nltk
+sklearn
+textblob
+worldcloud
